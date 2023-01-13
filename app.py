@@ -62,13 +62,16 @@ def get_img_as_base64(file):
     return base64.b64encode(data).decode()
 
 
-img = get_img_as_base64("img_1.png")
-
+img = get_img_as_base64("ball.jpg")
 # st.title("T20 Score Predictor")
 page_bg_img = f"""
 <style>
 [data-testid="stAppViewContainer"]>.main{{
 background-image: url("data:image/png;base64,{img}");
+background-size:     cover;                     
+background-repeat:   no-repeat;
+background-position: center center;
+
 }}
 [data-testid="stHeader"] {{
 background: rgba(0,0,0,0);

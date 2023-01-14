@@ -91,18 +91,18 @@ with col1:
 with col2:
     bowling_team = st.selectbox('Select Bowling Team', sorted(teams))
 
-city = st.selectbox('Select City', sorted(cities))
+city = st.selectbox('Select Venu', sorted(cities))
 
 col3, col4, col5 = st.columns(3)
 
 with col3:
-    current_score = st.number_input('Current Score')
+    current_score = st.number_input('Current Score',min_value=0,max_value=None, value=0, step=1)
 with col4:
-    overs = st.number_input('Overs Done(Over>5)')
+    overs = st.number_input('Overs Done(Over>5)',min_value=5,max_value=20, value=5, step=1)
 with col5:
-    wickets = st.number_input('Wickets Out')
+    wickets = st.number_input('Wickets Out',min_value=0,max_value=10, value= 0, step=1)
 
-last_five = st.number_input('Runs Scored in last 5 Overs')
+last_five = st.number_input('Runs Scored in last 5 Overs',min_value=0,max_value=None, value=0, step=1)
 
 if st.button('Predict Score'):
     balls_left = 120 - (overs * 6)
